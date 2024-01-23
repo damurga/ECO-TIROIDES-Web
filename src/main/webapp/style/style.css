@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --purppleDark: #8F57FD;
+    --purppleLight: #AB88FF;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+header{
+    width: 100%;
+    height: 50px;
+    background-color: var(--purppleDark);
+    color: white;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: var(--purppleLight);
+    color: black;
+}
+
+input, select{
+    padding: 0.25rem;
+}
+label{
+    margin-left: 1rem;
+    font-weight: bold;
+}
+.seccion{
+    margin-top:1rem;
+    padding: 1rem;
+}
+
+.nodulo{
+    margin: 1rem;
+    border: 1px var(--purppleDark) solid;
+    border-radius: 1rem;
+}
+.nodulo-cabecera{
+    background-color: var(--purppleDark);
+    border: 1px solid var(--purppleDark);
+    border-radius: 1rem 1rem 0 0;
+    color: white;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+.nodulo .seccion{
+    margin-top: 1rem;
+    font-size: 16px;
+    padding: 0.5rem;
+}

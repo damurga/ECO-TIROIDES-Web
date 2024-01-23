@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head id="cabecera">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe análítica</title>
+
+    <link rel="stylesheet" href="./style/style.css">
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Informe Estudio Tiroides<img src="assets/img/WhatsApp Image 2021-05-24 at 13.42.20.jpeg" alt="LOGO" style="float:right; width: 300px;padding:5px"> </h1>
+    </header>
+
+    <main>
+      <h2>Datos personales del paciente:</h2>
+        <div class="seccion">
+            <li><label for="nombre">Nombre: <input type="text" name="nombre" id="nombre"></label>
+            <label for="nhc">NHC: <input type="text" name="nhc" id="nhc"></label></li>
+            <li><label>Sexo:
+                <label for="sexo_hombre"><input type="radio" name="sexo" id="Hombre" value="1">Hombre</label>
+                <label for="sexo_mujer"><input type="radio" name="sexo" id="Mujer" value="2">Mujer</label></li>
+            <li><label for="edad">Edad: <input type="number" name="edad" id="edad"></label></li>
+        </div>
+
+        <h2>Ecografía tiroidea realizada en consulta de Endocrinología:</h2>
+
+        <div class="seccion">
+            <h3>Lóbulo tiroideo izquierdo (mm)</h3>
+            <label for="lobulo_izq_ap">AP: <input type="text" name="lobulo_izq_ap" id="lobulo_izq_ap"></label>
+            <label for="lobulo_izq_t">T: <input type="text" name="lobulo_izq_t" id="lobulo_izq_t"></label>
+            <label for="lobulo_izq_cc">CC:<input type="text" name="lobulo_izq_cc" id="lobulo_izq_cc"></label>
+            <label for="lobulo_izq_lobectomia"><input type="checkbox" name="lobulo_izq_lobectomia" id="lobulo_izq_lobectomia"> Lobectomía</label>
+            <ul>
+                	<li><label for="lobulo_izq_ecogeneicidad">Ecogenicidad global: <label for="lobulo_izq_eco_homo"> <input type="radio" name="lobulo_izq_eco" id="Homogenea" value="1"> Homogénea</label>     <label for="lobulo_izq_eco_hete"><input type="radio" name="lobulo_izq_eco" id="Heterogenea" value="2"> Heterogénea</label></label></li>
+                  <li><label for="lobulo_izq_vascularizacion">Vascularización: <label for="lobulo_izq_vasc_ausente"> <input type="radio" name="lobulo_izq_vasc" id="Ausente" value="1"> Ausente</label>     <label for="lobulo_izq_vasc_normal"><input type="radio" name="lobulo_izq_vasc" id="Normal" value="2"> Normal</label>     <label for="lobulo_izq_vasc_elevada"> <input type="radio" name="lobulo_izq_vasc" id="Elevada" value="3"> Elevada</label> </label></li>
+              </ul>
+              <ul>
+                <li><label for="lobulo_izdo_comentario">Comentarios: <textarea name="lobulo_izdo_comentario" id="lobulo_izdo_comentario"></textarea>
+            </ul>
+        </div>
+
+        <div class="seccion">
+            <h3>Istmo (mm)</h3>
+            <label for="istmo_ap">AP: <input type="text" name="istmo_ap" id="istmo_ap"></label>
+            <label for="istmo_lobectomia"><input type="checkbox" name="istmo_lobectomia" id="istmo_lobectomia"> Istmectomía</label>
+            <ul>
+                <li><label for="istmos_comentario">Comentarios: <textarea name="istmos_comentario" id="istmos_comentario"></textarea>
+            </ul>
+        </div>
+
+        <div class="seccion">
+            <h3>Lóbulo tiroideo derecho (mm)</h3>
+            <label for="lobulo_drc_ap">AP: <input type="text" name="lobulo_drc_ap" id="lobulo_drc_ap"></label>
+            <label for="lobulo_drc_t">T: <input type="text" name="lobulo_drc_t" id="lobulo_drc_t"></label>
+            <label for="lobulo_drc_cc">CC:<input type="text" name="lobulo_drc_cc" id="lobulo_drc_cc"></label>
+            <label for="lobulo_drc_lobectomia"><input type="checkbox" name="lobulo_drc_lobectomia" id="lobulo_drc_lobectomia"> Lobectomía</label>
+            <ul>
+                <li><label for="lobulo_drc_ecogeneicidad">Ecogenicidad global: <label for="lobulo_drc_eco_homo"> <input type="radio" name="lobulo_drc_eco" id="Homogenea" value="1"> Homogénea</label>     <label for="lobulo_drc_eco_hete"><input type="radio" name="lobulo_drc_eco" id="Heterogenea" value="2"> Heterogénea</label></li>
+                  <li><label for="lobulo_drc_vascularizacion">Vascularización: <label for="lobulo_drc_vasc_ausente"> <input type="radio" name="lobulo_drc_vasc" id="Ausente" value="1"> Ausente</label>     <label for="lobulo_drc_vasc_normal"><input type="radio" name="lobulo_drc_vasc" id="Normal" value="2"> Normal</label>     <label for="lobulo_drc_vasc_elevada"> <input type="radio" name="lobulo_drc_vasc" id="Elevada" value="3"> Elevada</label> </label></li>
+              </ul>
+            <ul>
+                <li><label for="lobulo_dcho_comentario">Comentarios: <textarea name="lobulo_dcho_comentario" id="lobulo_dcho_comentario"></textarea>
+            </ul>
+        </div>
+
+        <h3>Adenopatías laterocervicales sospechosas:</h3>
+        <label for="adenopatias_laterales">
+            <label for="adenopatias_laterales_si"><input type="radio" value=1 name="adenopatias_laterales" id="adenopatias_laterales_si" onClick="desplegar_tabla_adeno();">SI</label>
+            <label for="adenopatias_laterales_no"><input type="radio" value=0 name="adenopatias_laterales" id="adenopatias_laterales_no" onClick ="recoger_tabla_adeno();">NO</label>
+        </label>
+
+        <table id="adenopatias_tabla">
+        </table>
+		
+		<div id="tabla_nodulos">
+		<h3 style="text-align:center">NÓDULOS</h3>
+		
+        <div id="card_nodulo1" class="nodulo">
+            <div class="nodulo-cabecera">NÓDULO 1</div>
+            
+            <div class="seccion" id="lobulo1"> Lóbulo:
+                <label for="nodulo1_lobulo_drc"><input class="1" value="Derecho" type="radio" name="nodulo1_lobulo" id="nodulo1_lobulo_drc">Derecho</label>
+                <label for="nodulo1_lobulo_izq"><input class="1" value="Izquierdo" type="radio" name="nodulo1_lobulo" id="nodulo1_lobulo_izq">Izquierdo</label>
+                <label for="nodulo1_lobulo_itsmo"><input class="1" value="Istmo" type="radio" name="nodulo1_lobulo" id="nodulo1_lobulo_itsmo">Istmo</label>
+            </div>
+            
+            <div class="seccion">
+                Dimensiones (mm)
+                <label for="nodulo1_ap">AP:<input class="1" type="text" name="nodulo1_ap" id="nodulo1_ap"></label>
+                <label for="nodulo1_t">T:<input class="1" type="text" name="nodulo1_t" id="nodulo1_t"></label>
+                <label for="nodulo1_cc">CC:<input class="1" type="text" name="nodulo1_cc" id="nodulo1_cc"></label>
+            </div>
+            
+            <div class="seccion">
+                Transversal:
+                <label for="nodulo1_ctrans_si">SI <input class="1" value=1 type="radio" name="nodulo1_ctrans" id="nodulo1_ctrans_si"></label>
+                <label for="nodulo1_ctrans_no">NO <input class="1" value=0 type="radio" name="nodulo1_ctrans" id="nodulo1_ctrans_no"></label>
+           </div>
+           
+            <div class="seccion">
+                Localización:
+                <label for="nodulo1_loc_superior">Superior <input class="1" value="Superior" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_superior"></label>
+                <label for="nodulo1_loc_medio">Medio<input class="1" value="Medio" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_medio"></label>
+                <label for="nodulo1_loc_inferior">Inferior<input class="1" value="Inferior" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_inferior"></label>
+            	<label for="nodulo1_loc_anterior">Anterior<input class="1" value="Anterior" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_anterior"></label>
+                <label for="nodulo1_loc_posterior">Posterior<input class="1" value="Posterior" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_posterior"></label>
+                <label for="nodulo1_loc_medial">Medial<input class="1" value="Medial" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_medial"></labeL>
+                <label for="nodulo1_loc_lateral">Lateral<input class="1" value="Lateral" type="checkbox" name="nodulo1_loc" id="nodulo1_loc_lateral"></Label>
+            </div>
+            
+            <div class="seccion">
+                Ecogenicidad:
+                <select class="1" name="nodulo1_ecogene" id="nodulo1_ecogene">
+                    <option value=""></option>
+                    <option value="3" label="Marcadamente hipoecoico">Marcadamente hipoecoico</option>
+                    <option value="2" label="Hipoecoico">Hipoecoico</option>
+                    <option value="1" label="Isoecoico">Isoecoico</option>
+                    <option value="1" label="Hiperecoico">Hiperecoico</option>
+                    <option value="1" label="Heteroecoico">Heteroecoico</option>
+                </select>
+            </div>
+            
+            <div class="seccion">
+                Composición:
+                <select class="1" name="nodulo1_composicion" id="nodulo1_composicion">
+                    <option value=""></option>
+                    <option value="2" label="Sólido">Sólido </option>
+                    <option value="2" label="Predom. sólido (>80%)">Predom. sólido (>80%)</option>
+                    <option value="1" label="Mixto, CON área sólida excéntrica">Mixto, CON área sólida excéntrica</option>
+                    <option value="1" label="Mixto, SIN área sólida excéntrica">Mixto, SIN área sólida excéntrica</option>
+                    <option value="3" label="Espongiforme">Espongiforme</option>
+                    <option value="0" label="Quiste simple">Quiste simple</option>
+                </select>
+            </div>
+            
+            <div class="seccion">
+                Halo:
+                <select class="1" name="nodulo1_halo" id="nodulo1_halo">
+                    <option value=""></option>
+                    <option value="0" label="NO">NO </option>
+                    <option value="1" label="SI">SÍ</option>
+                    <option value="2" label="Interrumpido">Interrumpido</option>
+                </select>
+            </div>
+            
+            <div class="seccion">
+                Márgen:
+                <select class="1" name="nodulo1_margen" id="nodulo1_margen">
+                    <option value=""></option>
+                    <option value="0" label="Bien delimitado">Bien delimitado </option>
+                    <option value="0" label="Mal delimitado">Mal delimitado</option>
+                    <option value="1" label="Irregular">Irregular</option>
+                    <option value="1" label="Microlobular">Microlobular</option>
+                    <option value="3" label="Extension extratiroidea">Extension extratiroidea</option>
+                    <option value="1" label="Infiltrante">Infiltrante</option>
+                </select>
+            </div>
+            
+            <div class="seccion">
+                Artefactos de reverberación:
+				<label for="nodulo1_reverberacion_si">SI <input class="1" value=1 type="radio" name="nodulo1_reverberacion" id="nodulo1_reverberacion_si"></label>
+                <label for="nodulo1_reverberacion_no">NO <input class="1" value=0 type="radio" name="nodulo1_reverberacion" id="nodulo1_reverberacion_no"></label>
+            </div>
+            
+            <div class="seccion" id="calcificaciones1">
+                Calcificaciones:
+                <label for="nodulo1_calcificaciones_si">SI <input value=1 class="1" type="radio" name="nodulo1_calcificaciones1" id="nodulo1_calcificaciones_si" onClick="desplegar_calcificaciones(this);"></label>
+                <label for="nodulo1_calcificaciones_no">NO <input value=0 class="1" type="radio" name="nodulo1_calcificaciones1" id="nodulo1_calcificaciones_no" onClick="recoger_calcificaciones(this);"></label>
+            </div>
+            
+            <div class="seccion" id="extensionextra1">
+                Extensión extratiroidea:
+                <label for="nodulo1_extensionextra_si">SI <input value=1 class="1" type="radio" name="nodulo1_extensionextra1" id="nodulo1_extensionextra_si" onClick="desplegar_extension(this);"></label>
+                <label for="nodulo1_extensionextra_no">NO <input value=0 class="1" type="radio" name="nodulo1_extensionextra1" id="nodulo1_extensionextra_no" onClick="recoger_extension(this);"></label>
+            </div>
+            
+            <div class="seccion" id ="vascularizacion1">
+                Vascularización:
+                <select class="1" name="1" id="nodulo1_vascularizacion" onClick="desplegar_vascu_periferica(this);">
+                    <option value=""></option>
+                    <option value="0" label="No vascularizado">No vascularizado</option>
+                    <option value="1" label="Periférica">Periférica</option>
+                    <option value="2" label="Central">Central</option>
+                    <option value="3" label="Mixta">Mixta</option>
+                </select>
+            </div>
+            
+          	<button class="1" value="1" id="generar_acr" value=1 onClick="generar_acr(this);generar_eu(this);generar_ata(this);">GENERAR CATEGORIAS: ACR, EU-TIRADS y ATA</button>
+
+	        <div id="acr1" class="acr">
+	        </div>
+	        
+	        <div id="eu1" class="eu">
+	        </div>
+	        
+	        <div id="ata1" class="ata">
+	        </div>
+            
+            <div class="seccion">
+                <label for="nodulo1_observaciones">
+                    Observaciones:
+                    <textarea class="1" name="nodulo1_observaciones" id="nodulo1_observaciones" cols="30" rows="10"></textarea>
+                </label>
+            </div>
+            
+            <div class="seccion" id="biopsia1">
+                Nódulo biopsiado:
+                <label for="nodulo1_biopsiado_si">SI <input class="1" type="radio" name="nodulo1_biopsiado" value=1 id="nodulo1_biopsiado_si" onClick="desplegar_biopsiado(this);"></label>
+                <label for="nodulo1_biopsiado_no">NO <input class="1" type="radio" name="nodulo1_biopsiado" value=0 id="nodulo1_biopsiado_no" onClick="recoger_biopsiado(this);"></label>
+            </div>
+            
+            
+        <button class="1" id="generar_nodulo2" value="1" onClick="agregar_nodulo(this);generar_boton_editar(this);bloquearCampos(this);">GUARDAR Y AÑADIR NÓDULO</button>
+        <button  id="guardar1" value=1 onClick="guardar(this);">GUARDAR</button>`
+        </div>
+        </div>
+        
+        
+		<button id="generar_informe">GENERAR INFORME</button>
+		
+        <div class="informe">
+            <h2>INFORME GENERADO</h2>
+            <p>
+                <span id="info_nombre"></span>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Pie de página</h2>
+    </footer>
+</body>
+</html>
